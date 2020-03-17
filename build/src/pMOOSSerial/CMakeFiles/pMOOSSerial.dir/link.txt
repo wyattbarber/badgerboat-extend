@@ -1,0 +1,1 @@
+/usr/bin/c++   -fPIC -g  -rdynamic CMakeFiles/pMOOSSerial.dir/MOOSSerial.cpp.o CMakeFiles/pMOOSSerial.dir/MOOSSerial_Info.cpp.o CMakeFiles/pMOOSSerial.dir/main.cpp.o  -o ../../../bin/pMOOSSerial  -L/home/wyatt/moos/moos-ivp/lib -Wl,-rpath,/home/wyatt/moos/moos-ivp/lib /usr/local/lib/libMOOS.a -lmbutil -lapputil -lm -lpthread -pthread 

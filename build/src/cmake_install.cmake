@@ -43,6 +43,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/wyatt/moos/moos-ivp-extend/build/src/pXRelayTest/cmake_install.cmake")
   include("/home/wyatt/moos/moos-ivp-extend/build/src/pExampleApp/cmake_install.cmake")
   include("/home/wyatt/moos/moos-ivp-extend/build/src/pObstacleConverter/cmake_install.cmake")
+  include("/home/wyatt/moos/moos-ivp-extend/build/src/pDummyData/cmake_install.cmake")
 
 endif()
 

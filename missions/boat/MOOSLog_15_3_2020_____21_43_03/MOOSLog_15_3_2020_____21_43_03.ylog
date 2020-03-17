@@ -1,0 +1,20 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       ./MOOSLog_15_3_2020_____21_43_03/MOOSLog_15_3_2020_____21_43_03.ylog
+%% FILE OPENED ON  Wed Dec 31 18:00:00 1969
+%% LOGSTART               1584326582.93
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+1.077408   MOOS_DEBUG           pMarinePID           ** NEW CONTROLLER GAINS ARE ** 
+1.077612   MOOS_DEBUG           pMarinePID           YAW_PID_KP             = 1.200 
+1.0778     MOOS_DEBUG           pMarinePID           YAW_PID_KD             = 0.000 
+1.077909   MOOS_DEBUG           pMarinePID           YAW_PID_KI             = 0.300 
+1.078044   MOOS_DEBUG           pMarinePID           YAW_PID_INTEGRAL_LIMIT = 0.070 
+1.078155   MOOS_DEBUG           pMarinePID           MAXRUDDER              = 100.000 
+1.078971   MOOS_DEBUG           pMarinePID           SPEED_PID_KP           = 1.000 
+1.07909    MOOS_DEBUG           pMarinePID           SPEED_PID_KD           = 0.000 
+1.07921    MOOS_DEBUG           pMarinePID           SPEED_PID_KI           = 0.000 
+1.079321   MOOS_DEBUG           pMarinePID           SPEED_PID_INTEGRAL_LIMIT = 0.070 
+1.079437   MOOS_DEBUG           pMarinePID           MAXTHRUST              = 100.000 
+1.079437   MOOS_DEBUG           pMarinePID           MAXTHRUST              = 100.000 
+1.079437   MOOS_DEBUG           pMarinePID           MAXTHRUST              = 100.000 
+1.079437   MOOS_DEBUG           pMarinePID           MAXTHRUST              = 100.000 
+1.079437   MOOS_DEBUG           pMarinePID           MAXTHRUST              = 100.000 

@@ -43,9 +43,9 @@ int main(int argc, char *argv[])
   cout << "pObstacleConverter launching as " << run_command << endl;
   cout << termColor() << endl;
 
-  ObstacleConverter ObstacleConverter;
+  ObstacleConverter App;
 
-  ObstacleConverter.Run(run_command.c_str(), mission_file.c_str());
+  App.Run(run_command.c_str(), mission_file.c_str());
   
   return(0);
 }

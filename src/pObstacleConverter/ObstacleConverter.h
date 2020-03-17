@@ -20,8 +20,6 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-#define DEBUG 0
-
 class obstacleconvertertest; // forward declaration so we can declare the test harness as a friend
 
 class ObstacleConverter : public AppCastingMOOSApp
@@ -43,6 +41,8 @@ protected: // Standard MOOSApp functions to overload
 
     // Configuration Variables
     int batchSize;
+    std::string varIn;
+    std::string varOut;
 
     // State Variables
     std::vector<std::string> points;

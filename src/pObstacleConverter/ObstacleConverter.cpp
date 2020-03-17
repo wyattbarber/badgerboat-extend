@@ -5,7 +5,6 @@
 /*    DATE:                                                 */
 /************************************************************/
 
-#include "ObstacleConverter.h"
 #include <iostream>
 #include <stdio.h>
 #include <thread>
@@ -13,13 +12,19 @@
 #include <chrono>
 #include <cmath>
 
-#define DEBUG 0
+#define DEBUG 1
+#define DEBUG2 1
+
+#include "ObstacleConverter.h"
+
 
 //---------------------------------------------------------
 // Constructor
 ObstacleConverter::ObstacleConverter()
 {
   this->batchSize = 100;
+  this->varIn = "ROS_POINT";
+  this->varOut = "TRACKED_FEATURE";
   this->boatPose.head = 0.0;
   this->boatPose.x = 0.0;
   this->boatPose.y = 0.0;
@@ -60,9 +65,19 @@ bool ObstacleConverter::OnStartUp()
     std::string value = line;
     bool handled = false;
 
-    if (param == "BatchSize")
+    if (param == "BATCHSIZE")
     {
       this->batchSize = std::stoi(value);
+      handled = true;
+    }
+    else if (param == "VAR_IN")
+    {
+      this->varIn = value;
+      handled = true;
+    }
+    else if (param == "VAR_OUT") 
+    {
+      this->varOut = value;
       handled = true;
     }
 
@@ -109,11 +124,24 @@ bool ObstacleConverter::OnNewMail(MOOSMSG_LIST &newMail)
     CMOOSMsg msg = *p;
     std::string key = msg.GetKey();
 
+#if DEBUG2
+      std::cout << termColor("green");
+      std::cout << "pObstacleConverter: Recieved msg key: " << key <<std::endl;
+      std::cout << termColor() << std::endl;
+#endif
+
     bool handled = false;
-    if (key == "ROS_POINTS")
+    if (key == this->varIn)
     {
       std::string pt_as_str = handleNewPoint(msg.GetString());
       points.push_back(pt_as_str);
+
+#if DEBUG2
+      std::cout << termColor("green");
+      std::cout << "pObstacleConverter: Adding point to queue." << std::endl;
+      std::cout << termColor() << std::endl;
+#endif
+
       handled = true;
     }
     else if (key == "NAV_X")
@@ -168,12 +196,24 @@ bool ObstacleConverter::Iterate()
   {
     if(points.empty())
     {
+      #if DEBUG2
+      std::cout << termColor("green");
+      std::cout << "pObstacleConverter: Attempted to pop, queue empty." << std::endl;
+      std::cout << termColor() << std::endl;
+      #endif
+
       break;
     }
     else
     {
+      #if DEBUG2
+      std::cout << termColor("green");
+      std::cout << "pObstacleConverter: Popped point from queue." << std::endl;
+      std::cout << termColor() << std::endl;
+      #endif
+
       std::string pt = points.front();
-      Notify("TRACKED_POINT", pt);
+      Notify(this->varOut, pt);
       points.erase(points.begin());
     }
   }
@@ -199,7 +239,7 @@ void ObstacleConverter::registerVariables()
 
   AppCastingMOOSApp::RegisterVariables();
 
-  Register("ROS_POINTS", 0);
+  Register(this->varIn, 0);
   Register("NAV_X", 0);
   Register("NAV_Y", 0);
   Register("NAV_HEADING", 0);

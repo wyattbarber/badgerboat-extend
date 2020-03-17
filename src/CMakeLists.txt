@@ -18,7 +18,7 @@ ADD_SUBDIRECTORY(lib_behaviors-test)
 ADD_SUBDIRECTORY(pXRelayTest)
 ADD_SUBDIRECTORY(pExampleApp)
 ADD_SUBDIRECTORY(pObstacleConverter)
-ADD_SUBDIRECTORY(pMOOSSerial)
+ADD_SUBDIRECTORY(pDummyData)
 
 ##############################################################################
 #                           END of CMakeLists.txt

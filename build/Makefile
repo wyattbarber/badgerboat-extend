@@ -162,6 +162,19 @@ pObstacleConverter/fast:
 	$(MAKE) -f src/pObstacleConverter/CMakeFiles/pObstacleConverter.dir/build.make src/pObstacleConverter/CMakeFiles/pObstacleConverter.dir/build
 .PHONY : pObstacleConverter/fast
 
+#=============================================================================
+# Target rules for targets named pDummyData
+
+# Build rule for target.
+pDummyData: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pDummyData
+.PHONY : pDummyData
+
+# fast build rule for target.
+pDummyData/fast:
+	$(MAKE) -f src/pDummyData/CMakeFiles/pDummyData.dir/build.make src/pDummyData/CMakeFiles/pDummyData.dir/build
+.PHONY : pDummyData/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -174,6 +187,7 @@ help:
 	@echo "... pXRelayTest"
 	@echo "... pExampleApp"
 	@echo "... pObstacleConverter"
+	@echo "... pDummyData"
 .PHONY : help
 
 

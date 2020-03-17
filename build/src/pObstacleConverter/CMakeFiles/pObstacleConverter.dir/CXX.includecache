@@ -7,10 +7,6 @@
 #IncludeRegexTransform: 
 
 /home/wyatt/moos/moos-ivp-extend/src/pObstacleConverter/ObstacleConverter.cpp
-ObstacleConverter.h
-/home/wyatt/moos/moos-ivp-extend/src/pObstacleConverter/ObstacleConverter.h
-ACTable.h
-/home/wyatt/moos/moos-ivp-extend/src/pObstacleConverter/ACTable.h
 iostream
 -
 stdio.h
@@ -23,6 +19,8 @@ chrono
 -
 cmath
 -
+ObstacleConverter.h
+/home/wyatt/moos/moos-ivp-extend/src/pObstacleConverter/ObstacleConverter.h
 
 /home/wyatt/moos/moos-ivp-extend/src/pObstacleConverter/ObstacleConverter.h
 MOOS/libMOOS/Thirdparty/AppCasting/AppCastingMOOSApp.h
@@ -71,14 +69,6 @@ ObstacleConverter_Info.h
 /home/wyatt/moos/moos-ivp-extend/src/pObstacleConverter/ObstacleConverter_Info.h
 ObstacleConverter.h
 /home/wyatt/moos/moos-ivp-extend/src/pObstacleConverter/ObstacleConverter.h
-
-/home/wyatt/moos/moos-ivp/ivp/src/lib_apputil/ACTable.h
-string
--
-vector
--
-list
--
 
 /home/wyatt/moos/moos-ivp/ivp/src/lib_geometry/AngleUtils.h
 list
