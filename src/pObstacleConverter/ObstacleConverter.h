@@ -63,44 +63,22 @@ protected: // Standard MOOSApp functions to overload
     // Helper Function to process incoming points
     std::string handleNewPoint(std::string point_in)
     {
-#if DEBUG
-        std::cout << termColor("green");
-        std::cout << "pObstacleConverter::handleNewPoint(std::string point_in) Called." << std::endl;
-        std::cout << termColor() << std::endl;
-#endif
-
         RadPoint pt = stringToPoint(point_in);
 
-        double beta = pt.theta + (boatPose.head - (M_PI / 2.0));
-        double sbeta = sin(beta);
-        double cbeta = cos(beta);
+        double beta = pt.theta + boatPose.head + (M_PI / 2.0);
+        double sb = sin(beta);
+        double cb = cos(beta);
 
-        double x_global = (pt.r * cbeta) - (pt.r * sbeta) + boatPose.x;
-        double y_global = (pt.r * sbeta) + (pt.r * cbeta) + boatPose.y;
+        double x_g = boatPose.x + (pt.r * cb);
+        double y_g = boatPose.y + (pt.r * sb);
 
-        std::ostringstream stream;
-        stream << "x=" << x_global << ",";
-        stream << "y=" << y_global << ",";
-        stream << "label=" << pt.label;
-
-#if DEBUG
-        std::cout << termColor("green");
-        std::cout << "pObstacleConverter::handleNewPoint(std::string point_in) Finished." << std::endl;
-        std::cout << termColor() << std::endl;
-#endif
-
-        return stream.str();
+        std::string out = "x="+std::to_string(x_g)+","+"y="+std::to_string(y_g)+","+"label="+std::to_string(pt.label);
+        return out;
     }
 
     // Helper Function to convert string to point
     RadPoint stringToPoint(std::string in)
     {
-#if DEBUG
-        std::cout << termColor("green");
-        std::cout << "pObstacleConverter::stringToPoint(std::string in) Called." << std::endl;
-        std::cout << termColor() << std::endl;
-#endif
-
         std::vector<std::string> slist = parseString(in, ',');
         RadPoint out;
         for (int i = 0; i < slist.size(); i++)
@@ -121,12 +99,6 @@ protected: // Standard MOOSApp functions to overload
                 out.label = std::stod(value);
             }
         }
-
-#if DEBUG
-        std::cout << termColor("green");
-        std::cout << "pObstacleConverter::stringToPoint(std::string in) Called." << std::endl;
-        std::cout << termColor() << std::endl;
-#endif
         return out;
     }
 };
